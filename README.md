@@ -45,12 +45,21 @@ The same four states are explored in desktop and mobile layouts. [Open the inter
 | Follow | [Live execution](Prototype%20Screens/Website%20screens/Website%20Screens/live_agent_execution_q3_review/code.html) | [Mobile live task](Prototype%20Screens/Mobile/Mobile%20Screens/copilot_mobile_live_task/code.html) |
 | Review | [Completed work](Prototype%20Screens/Website%20screens/Website%20Screens/completed_work_q3_executive_review/code.html) | [Mobile completed work](Prototype%20Screens/Mobile/Mobile%20Screens/copilot_mobile_completed_work/code.html) |
 
+## Project Walkthrough
+
+Additional screenshots show how the concept works beyond the individual interface screens.
+
+| Walkthrough view 1 | Walkthrough view 2 | Walkthrough view 3 |
+|:---:|:---:|:---:|
+| ![Project walkthrough screenshot 1](Project%20Screenshots/ChatGPT%20Image%20Sep%2027,%202026,%2003_46_27%20PM.png) | ![Project walkthrough screenshot 2](Project%20Screenshots/ChatGPT%20Image%20Sep%2027,%202026,%2003_46_34%20PM.png) | ![Project walkthrough screenshot 3](Project%20Screenshots/ChatGPT%20Image%20Sep%2027,%202026,%2003_47_31%20PM.png) |
+
 ## Project Notes
 
 - [Product context](context.md): goals, requirements, success measures, and open questions.
 - [Project plan](plan.md): a practical path for reviewing and extending the concepts.
 - [Portfolio site](index.html): responsive gallery with device filters and screen previews.
 - `Prototype Screens/`: supplied standalone HTML concepts and PNG previews.
+- `Project Screenshots/`: additional walkthrough images showing how the concept works.
 - `PRD - Sunday Workshop - Copilot v2 for Microsoft.docx`: source requirements.
 
 ### Run Locally

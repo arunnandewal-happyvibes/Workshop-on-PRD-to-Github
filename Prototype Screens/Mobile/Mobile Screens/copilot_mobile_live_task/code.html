@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fdf8f6;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-high": "#ece7e4", "surface-dim": "#ddd9d6", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#005228", "on-primary-fixed-variant": "#004883", "primary-fixed-dim": "#a3c9ff", "on-primary-fixed": "#001c39", "on-secondary": "#ffffff", "primary": "#005396", "on-surface": "#1c1b1a", "on-tertiary": "#ffffff", "surface-container": "#f1edea", "on-error-container": "#93000a", "background": "#fdf8f6", "inverse-on-surface": "#f4f0ed", "surface": "#fdf8f6", "primary-container": "#0f6cbd", "on-tertiary-fixed": "#00210c", "surface-container-highest": "#e6e2df", "on-primary-container": "#e3ecff", "on-error": "#ffffff", "secondary-container": "#b3b5fe", "secondary-fixed-dim": "#c0c1ff", "surface-container-lowest": "#ffffff", "on-secondary-fixed-variant": "#3e4080", "surface-bright": "#fdf8f6", "secondary-fixed": "#e1e0ff", "tertiary-container": "#0e7b40", "inverse-primary": "#a3c9ff", "on-background": "#1c1b1a", "tertiary": "#00602f", "on-tertiary-container": "#adffbf", "inverse-surface": "#31302e", "outline-variant": "#c1c7d3", "surface-container-low": "#f7f3f0", "on-secondary-container": "#424485", "secondary": "#56589a", "tertiary-fixed": "#96f7af", "tertiary-fixed-dim": "#7ada95", "surface-tint": "#0060ab", "outline": "#717783", "on-secondary-fixed": "#101053", "error-container": "#ffdad6", "surface-variant": "#e6e2df", "on-surface-variant": "#414751", "on-primary": "#ffffff", "primary-fixed": "#d3e3ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "0.75rem", "gutter-lg": "1.5rem", "space-lg": "1rem", "space-xs": "0.25rem", "margin": "1.5rem", "margin-sm": "1rem", "space-sm": "0.5rem", "gutter": "1rem", "gutter-sm": "0.5rem", "space-xl": "1.5rem", "margin-lg": "2rem" }, "fontFamily": { "code": ["JetBrains Mono"], "headline-lg-mobile": ["Segoe UI"], "headline-lg": ["Segoe UI"], "body-md": ["Segoe UI"], "label-md": ["Segoe UI"], "display": ["Segoe UI"], "headline-sm": ["Segoe UI"], "body-sm": ["Segoe UI"], "headline-md": ["Segoe UI"], "label-lg": ["Segoe UI"], "body-lg": ["Segoe UI"], "label-sm": ["Segoe UI"] }, "fontSize": { "code": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg-mobile": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-sm": ["15px", { "lineHeight": "20px", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-md": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><button aria-label="Go back" class="w-11 h-11 -ml-2 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img alt="Brand logo. - Primary color: #0f6cbd
+- Font: publicSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-7 w-auto object-contain flex-shrink-0 hidden xs:block" src="https://lh3.googleusercontent.com/aida/AEtjO1W3sJ0R8zxaTRlsU5KAJJwkDW6KZXBXVSo4dfygzyOyDjpgcZas_aA2dvm0aueC1Qv6-u6x68h4xbXw54OeJu2iB9fTVe2gfp_p8V5_03UcRyULjygPWRLN-9dJL8sQ_anFxyRgiEWBu9iLHmeAPP_x-LPCj1by6ukZJIcH5Cg-bQgSmyAF2bQCI2iLop8NrAYMGqmJVlEu3RokHvu_v_kM5n1tcAB2H-QTetlqg0DPuKyCo6TRPZa8Rrp3"/><div class="flex flex-col min-w-0"><h1 class="font-headline-md text-headline-md text-on-surface truncate">Execution Inspector</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Actions" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">more_vert</span></button><div class="flex items-center pl-1"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary ring-2 ring-surface shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full pb-28">
+<div class="px-gutter pt-space-md flex flex-col gap-space-md">
+<!-- Header Telemetry Strip -->
+<div class="flex items-center justify-between bg-surface-container rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="relative flex h-2.5 w-2.5 flex-shrink-0">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Live Orchestration</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Execution in Progress</span>
+</div>
+</div>
+<div class="bg-surface-container-highest px-2.5 py-1 rounded-full flex-shrink-0 shadow-xs">
+<span class="font-code text-code text-primary font-semibold">#EXEC-84920</span>
+</div>
+</div>
+<!-- Task Overview & Progress Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary font-semibold uppercase">Autonomous Workflow</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mt-0.5">Preparing your Q3 Executive Review</h2>
+</div>
+<div class="relative w-12 h-12 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="68, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-label-md text-label-md text-on-surface font-bold">68%</span>
+</div>
+</div>
+<!-- Execution Duration / Estimate Bar -->
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">bolt</span>
+<span>Active Step 5 of 7</span>
+</span>
+<span class="font-code text-code text-on-surface-variant">~1m 45s remaining</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary-container via-primary to-secondary rounded-full transition-all duration-500" style="width: 68%;"></div>
+</div>
+</div>
+<!-- Multi-App Execution Pipeline Pills -->
+<div class="flex flex-col gap-space-xs pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Connected Tenant Services</span>
+<div class="grid grid-cols-1 gap-2 pt-0.5">
+<!-- Excel App State -->
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-low shadow-xs">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-6 h-6 rounded flex items-center justify-center bg-tertiary-container text-on-tertiary-container flex-shrink-0">
+<span class="font-code text-code font-bold">X</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface truncate">Microsoft Excel</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container px-2 py-0.5 rounded-full text-tertiary">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="font-label-sm text-label-sm font-semibold">Extracted</span>
+</div>
+</div>
+<!-- Teams App State -->
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-low shadow-xs">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-6 h-6 rounded flex items-center justify-center bg-secondary text-on-secondary flex-shrink-0">
+<span class="font-code text-code font-bold">T</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface truncate">Microsoft Teams</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container px-2 py-0.5 rounded-full text-tertiary">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span class="font-label-sm text-label-sm font-semibold">Synthesized</span>
+</div>
+</div>
+<!-- PowerPoint App State (Active) -->
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-primary-fixed text-on-primary-fixed shadow-xs">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-6 h-6 rounded flex items-center justify-center bg-primary text-on-primary flex-shrink-0">
+<span class="font-code text-code font-bold">P</span>
+</div>
+<span class="font-label-md text-label-md text-on-primary-fixed truncate">PowerPoint 365</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-lowest text-primary px-2.5 py-0.5 rounded-full shadow-xs">
+<span class="relative flex h-2 w-2 flex-shrink-0">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-sm text-label-sm font-semibold">Slide 7 of 10</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Artifact Mini Preview -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">slideshow</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Live Canvas Render</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-primary animate-spin">sync</span>
+<span>PowerPoint Web Sync</span>
+</div>
+</div>
+<!-- Slide Mock Preview -->
+<div class="rounded-lg bg-surface-container-high p-3 flex flex-col gap-2 shadow-xs">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Slide 07 • Financial Dynamics</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Enterprise Segment Trajectory</span>
+</div>
+<span class="bg-error-container text-on-error-container px-1.5 py-0.5 rounded font-code text-code font-semibold">-14% YoY</span>
+</div>
+<!-- Rendered Spark / Mini Bar Chart SVG -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-2.5 flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>APAC vs EMEA vs NA (Q3)</span>
+<span class="font-code text-code text-primary">Drafting chart visuals</span>
+</div>
+<div class="h-16 w-full flex items-end justify-between gap-3 px-2 pt-1 pb-1 bg-surface-container-low rounded">
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-primary-container rounded-t" style="height: 75%;"></div>
+<span class="font-code text-code text-on-surface-variant">NA</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-secondary rounded-t" style="height: 52%;"></div>
+<span class="font-code text-code text-on-surface-variant">EMEA</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-error rounded-t" style="height: 38%;"></div>
+<span class="font-code text-code text-on-surface-variant">APAC</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 h-full justify-end">
+<div class="w-full bg-tertiary rounded-t" style="height: 88%;"></div>
+<span class="font-code text-code text-on-surface-variant">Global</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Execution Timeline Stream -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Execution Log & Telemetry</span>
+<span class="font-code text-code text-on-surface-variant">Deterministic Graph</span>
+</div>
+<div class="relative flex flex-col gap-4 pl-1">
+<!-- Vertical connector line element -->
+<div class="absolute left-[13px] top-2 bottom-3 w-0.5 bg-surface-container-high"></div>
+<!-- Node 1: Completed -->
+<div class="relative flex items-start gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center flex-shrink-0 z-10 shadow-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 bg-surface-container-low rounded-lg p-2 shadow-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">[Excel Graph] Connected Source</span>
+<span class="font-code text-code text-on-surface-variant">09:42:10</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 truncate">Q3_Regional_Performance.xlsx (1.84 MB read, 420ms)</p>
+</div>
+</div>
+<!-- Node 2: Completed -->
+<div class="relative flex items-start gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center flex-shrink-0 z-10 shadow-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 bg-surface-container-low rounded-lg p-2 shadow-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">[Analytics] Target Variance</span>
+<span class="font-code text-code text-on-surface-variant">09:42:35</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Computed APAC, EMEA, NA delta metrics against plan.</p>
+</div>
+</div>
+<!-- Node 3: Completed -->
+<div class="relative flex items-start gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center flex-shrink-0 z-10 shadow-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 bg-surface-container-low rounded-lg p-2 shadow-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">[Teams Graph] Semantic Ingestion</span>
+<span class="font-code text-code text-on-surface-variant">09:43:02</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Scanned 18 contextual leadership threads in #Marketing-Leadership.</p>
+</div>
+</div>
+<!-- Node 4: Completed -->
+<div class="relative flex items-start gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center flex-shrink-0 z-10 shadow-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 bg-surface-container-low rounded-lg p-2 shadow-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">[Synthesis] Context Formulation</span>
+<span class="font-code text-code text-on-surface-variant">09:43:40</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Identified 3 major performance drivers & enterprise segment friction.</p>
+</div>
+</div>
+<!-- Node 5: ACTIVE -->
+<div class="relative flex items-start gap-space-sm">
+<div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center flex-shrink-0 z-10 shadow-sm ring-2 ring-primary-fixed-dim">
+<span class="material-symbols-outlined text-[14px] text-on-primary animate-spin">refresh</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 bg-primary-fixed text-on-primary-fixed rounded-lg p-2.5 shadow-sm">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm font-bold">[PowerPoint API] Authoring Slide</span>
+<span class="font-code text-code font-semibold">09:44:15 • NOW</span>
+</div>
+<p class="font-body-sm text-body-sm mt-0.5">Writing Slide 7: Enterprise Segment Trajectory (-14% YoY) with visual contrast hierarchy.</p>
+</div>
+</div>
+<!-- Node 6: Queue Pending -->
+<div class="relative flex items-start gap-space-sm opacity-60">
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 z-10">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 bg-surface-container-low rounded-lg p-2">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Queue: Strategic Recommendation Deck</span>
+<span class="font-code text-code text-on-surface-variant">Est 09:45:10</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Synthesize actionable mitigations based on executive stakeholder notes.</p>
+</div>
+</div>
+<!-- Node 7: Queue Pending Purview -->
+<div class="relative flex items-start gap-space-sm opacity-60">
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 z-10">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+</div>
+<div class="flex flex-col min-w-0 flex-1 bg-surface-container-low rounded-lg p-2">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Queue: Compliance & Sensitivity Guardrails</span>
+<span class="font-code text-code text-on-surface-variant">Est 09:45:45</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Final Microsoft Purview DLP validation & Confidential label tagging.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Safety / Trust Banner -->
+<div class="bg-surface-container rounded-xl p-space-md shadow-xs flex items-start gap-space-sm mb-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center flex-shrink-0 text-primary shadow-xs">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Zero Disruption Background Execution</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Copilot runs securely in your enterprise tenant. You can safely lock your phone or take a call without interrupting execution.
+        </p>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Control Surface -->
+<div class="fixed bottom-0 inset-x-0 bg-surface/90 backdrop-blur-xl shadow-lg p-gutter flex flex-col gap-space-xs z-40 pb-safe">
+<div class="flex items-center gap-space-sm w-full">
+<!-- Pause Task Button -->
+<button class="flex-1 h-10 rounded-lg bg-surface-container-highest text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-1.5 active:scale-95 transition-transform shadow-xs" id="pause-btn">
+<span class="material-symbols-outlined text-[18px]">pause</span>
+<span id="pause-label">Pause Task</span>
+</button>
+<!-- Stop Task Button -->
+<button class="flex-1 h-10 rounded-lg bg-error-container text-on-error-container font-label-lg text-label-lg flex items-center justify-center gap-1.5 active:scale-95 transition-transform shadow-xs" id="stop-btn">
+<span class="material-symbols-outlined text-[18px]">stop_circle</span>
+<span>Stop Task</span>
+</button>
+</div>
+<!-- View Audit Deep Link -->
+<div class="flex justify-center items-center pt-1">
+<button class="font-label-sm text-label-sm text-primary flex items-center gap-1 py-1 px-2 rounded hover:bg-surface-container transition-colors">
+<span>View Full Orchestration Telemetry & Audit</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    var pauseBtn = document.getElementById('pause-btn');
+    var pauseLabel = document.getElementById('pause-label');
+    var isPaused = false;
+
+    if (pauseBtn && pauseLabel) {
+      pauseBtn.addEventListener('click', function() {
+        isPaused = !isPaused;
+        if (isPaused) {
+          pauseLabel.textContent = 'Resume Task';
+          pauseBtn.querySelector('.material-symbols-outlined').textContent = 'play_arrow';
+          pauseBtn.classList.add('bg-primary-fixed', 'text-on-primary-fixed');
+          pauseBtn.classList.remove('bg-surface-container-highest', 'text-on-surface');
+        } else {
+          pauseLabel.textContent = 'Pause Task';
+          pauseBtn.querySelector('.material-symbols-outlined').textContent = 'pause';
+          pauseBtn.classList.remove('bg-primary-fixed', 'text-on-primary-fixed');
+          pauseBtn.classList.add('bg-surface-container-highest', 'text-on-surface');
+        }
+      });
+    }
+
+    var stopBtn = document.getElementById('stop-btn');
+    if (stopBtn) {
+      stopBtn.addEventListener('click', function() {
+        if (confirm('Quarantine and stop #EXEC-84920? All uncommitted PowerPoint slides will revert.')) {
+          stopBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span> Terminated';
+          stopBtn.disabled = true;
+          stopBtn.classList.add('opacity-70');
+        }
+      });
+    }
+  })();
+</script></main></body></html>

@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5ed">
+    <meta name="description" content="A portfolio exploration of Copilot agentic workflows across desktop and mobile.">
+    <title>Copilot, past the prompt | Sunday Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #19251f;
+        --muted: #56645b;
+        --paper: #f4f5ed;
+        --white: #fffefa;
+        --line: #d8ddd2;
+        --green: #176448;
+        --lime: #d5f36a;
+        --coral: #e9795d;
+        --display: "Space Grotesk", "Avenir Next", sans-serif;
+        --body: "DM Sans", "Avenir Next", sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--body);
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; }
+      .shell { width: min(1240px, calc(100% - 48px)); margin: 0 auto; }
+      .topbar {
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+      }
+      .wordmark {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .mark {
+        display: grid;
+        width: 30px;
+        height: 30px;
+        place-items: center;
+        border-radius: 9px;
+        background: var(--green);
+        color: var(--lime);
+        font-family: var(--display);
+        font-size: 17px;
+      }
+      .nav-links { display: flex; gap: 28px; align-items: center; }
+      .nav-links a {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .nav-links a:hover { color: var(--green); }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr);
+        gap: 56px;
+        align-items: center;
+        min-height: 660px;
+        padding: 64px 0 76px;
+      }
+      .eyebrow, .section-kicker {
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+      h1, h2, h3, p { margin-top: 0; }
+      h1 {
+        max-width: 590px;
+        margin: 18px 0 20px;
+        font-family: var(--display);
+        font-size: clamp(46px, 6vw, 76px);
+        font-weight: 600;
+        line-height: .99;
+      }
+      h1 span { color: var(--green); }
+      .hero-copy > p {
+        max-width: 510px;
+        margin-bottom: 28px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+      .actions { display: flex; flex-wrap: wrap; gap: 11px; }
+      .button {
+        display: inline-flex;
+        min-height: 46px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 17px;
+        border: 1px solid var(--ink);
+        border-radius: 5px;
+        background: var(--ink);
+        color: var(--white);
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 160ms ease, background 160ms ease;
+      }
+      .button:hover { transform: translateY(-2px); background: var(--green); }
+      .button.secondary { background: transparent; color: var(--ink); }
+      .button.secondary:hover { background: var(--white); }
+      .hero-note { margin: 18px 0 0; color: #718076; font-size: 12px; }
+
+      .hero-stage {
+        position: relative;
+        min-height: 475px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border: 1px solid #d5ddd1;
+        border-radius: 10px;
+        background-color: #e7eddf;
+        background-image: radial-gradient(#aab9a8 0.7px, transparent 0.7px);
+        background-size: 16px 16px;
+      }
+      .hero-desktop {
+        width: 76%;
+        height: 425px;
+        object-fit: cover;
+        object-position: top;
+        border: 7px solid #fffefa;
+        border-radius: 7px;
+        background: var(--white);
+        box-shadow: 0 24px 60px #1c30231f;
+      }
+      .hero-mobile {
+        position: absolute;
+        right: 5%;
+        bottom: 20px;
+        width: 23%;
+        height: 270px;
+        object-fit: cover;
+        object-position: top;
+        border: 5px solid #fffefa;
+        border-radius: 14px;
+        background: var(--white);
+        box-shadow: 0 15px 36px #1c302333;
+      }
+      .stage-label {
+        position: absolute;
+        left: 18px;
+        bottom: 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 12px;
+        border: 1px solid #ffffff90;
+        border-radius: 5px;
+        background: #fffefaeb;
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .stage-label i { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }
+
+      .principles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .principle { padding: 25px 28px 27px 0; }
+      .principle + .principle { padding-left: 28px; border-left: 1px solid var(--line); }
+      .principle b { display: block; margin-bottom: 8px; font-family: var(--display); font-size: 17px; }
+      .principle p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+      .gallery { padding: 88px 0 96px; }
+      .gallery-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 28px;
+      }
+      h2 { margin: 10px 0 0; font-family: var(--display); font-size: 42px; line-height: 1.1; }
+      .gallery-head p { max-width: 460px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+      .filters { display: flex; gap: 8px; margin-bottom: 24px; }
+      .filter {
+        min-height: 36px;
+        padding: 0 13px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        background: transparent;
+        color: var(--muted);
+        font: 600 12px var(--body);
+        cursor: pointer;
+      }
+      .filter[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: var(--white); }
+      .filter:focus-visible, a:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+      .screen-group { margin-top: 36px; }
+      .group-heading {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 16px;
+        font-family: var(--display);
+        font-size: 21px;
+      }
+      .group-heading span { color: var(--muted); font: 600 11px var(--body); }
+      .screen-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+      .screen-card {
+        min-width: 0;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: var(--white);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+      .screen-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px #233a2914; }
+      .preview {
+        height: 300px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
+        background: #e9ede5;
+      }
+      .preview img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+      .preview.mobile { background: #e2eadf; }
+      .preview.mobile img {
+        width: auto;
+        max-width: min(46%, 185px);
+        height: 94%;
+        border: 4px solid #fffefa;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px #233a2920;
+        object-fit: cover;
+        object-position: top;
+      }
+      .card-copy { padding: 18px 20px 19px; }
+      .card-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+      .card-meta span { color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+      .card-copy h3 { margin: 0; font-family: var(--display); font-size: 20px; }
+      .card-copy p { min-height: 42px; margin: 8px 0 14px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+      .open-link { color: var(--ink); font-size: 12px; font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+      .open-link:hover { color: var(--green); }
+      [hidden] { display: none !important; }
+
+      .closing {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 30px;
+        align-items: center;
+        padding: 32px;
+        border-radius: 7px;
+        background: var(--green);
+        color: var(--white);
+      }
+      .closing h2 { max-width: 600px; margin: 0 0 8px; font-size: 28px; }
+      .closing p { max-width: 650px; margin: 0; color: #e0e9df; font-size: 13px; line-height: 1.65; }
+      .closing .button { border-color: var(--lime); background: var(--lime); color: var(--ink); white-space: nowrap; }
+      .closing .button:hover { background: #e4f99a; }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 24px 0 30px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+      footer a { text-decoration: none; }
+      footer a:hover { color: var(--green); }
+
+      @media (max-width: 850px) {
+        .hero { grid-template-columns: 1fr; gap: 34px; min-height: auto; padding: 65px 0; }
+        .hero-copy { max-width: 650px; }
+        .hero-stage { min-height: 440px; }
+        .hero-desktop { height: 390px; }
+        .hero-mobile { height: 245px; }
+        .gallery-head { align-items: start; flex-direction: column; }
+      }
+      @media (max-width: 600px) {
+        .shell { width: min(100% - 32px, 1240px); }
+        .topbar { min-height: 64px; }
+        .nav-links { gap: 15px; }
+        .nav-links a { font-size: 11px; }
+        .hero { padding: 52px 0 48px; }
+        h1 { font-size: 48px; }
+        .hero-copy > p { font-size: 15px; }
+        .hero-stage { min-height: 335px; }
+        .hero-desktop { width: 80%; height: 300px; border-width: 5px; }
+        .hero-mobile { right: 3%; bottom: 15px; width: 25%; height: 190px; border-width: 4px; }
+        .stage-label { left: 10px; bottom: 10px; padding: 7px 9px; font-size: 9px; }
+        .principles { grid-template-columns: 1fr; }
+        .principle, .principle + .principle { padding: 18px 0; border-left: 0; }
+        .principle + .principle { border-top: 1px solid var(--line); }
+        .gallery { padding: 62px 0; }
+        h2 { font-size: 34px; }
+        .screen-grid { grid-template-columns: 1fr; gap: 14px; }
+        .preview { height: 260px; }
+        .card-copy p { min-height: 0; }
+        .closing { grid-template-columns: 1fr; padding: 24px; }
+        .closing h2 { font-size: 25px; }
+        .closing .button { justify-self: start; }
+        footer { flex-direction: column; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="shell topbar">
+      <a class="wordmark" href="#top" aria-label="Sunday Workshop home">
+        <span class="mark" aria-hidden="true">S</span>
+        <span>SUNDAY WORKSHOP</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#prototypes">Prototypes</a>
+        <a href="context.md">Project brief</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="shell hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">Product exploration · Agentic work</div>
+          <h1 id="hero-title">Copilot,<br><span>past the prompt.</span></h1>
+          <p>What if work started with the outcome, not a list of steps? This concept explores how Copilot could plan, carry out, and explain multi-step work across Microsoft 365, without taking people out of their flow.</p>
+          <div class="actions">
+            <a class="button" href="#prototypes">Explore the screens <span aria-hidden="true">&#8594;</span></a>
+            <a class="button secondary" href="plan.md">Read the project plan</a>
+          </div>
+          <p class="hero-note">Independent portfolio concept · Not an official Microsoft product</p>
+        </div>
+        <div class="hero-stage" aria-label="Desktop and mobile prototype previews">
+          <img class="hero-desktop" src="Prototype%20Screens/Website%20screens/Website%20Screens/copilot_workspace_home/screen.png" alt="Copilot desktop workspace home prototype">
+          <img class="hero-mobile" src="Prototype%20Screens/Mobile/Mobile%20Screens/copilot_mobile_live_task/screen.png" alt="Copilot mobile live task prototype">
+          <div class="stage-label"><i aria-hidden="true"></i> One task, visible from start to finish</div>
+        </div>
+      </section>
+
+      <section class="shell principles" aria-label="Product principles">
+        <article class="principle">
+          <b>Start with the outcome</b>
+          <p>People describe what needs to be done. Copilot works out the steps.</p>
+        </article>
+        <article class="principle">
+          <b>Make progress legible</b>
+          <p>Show the work in motion, where it is happening, and when help is needed.</p>
+        </article>
+        <article class="principle">
+          <b>Finish with confidence</b>
+          <p>Make the result reviewable, recoverable, and ready for the next action.</p>
+        </article>
+      </section>
+
+      <section class="shell gallery" id="prototypes" aria-labelledby="gallery-title">
+        <div class="gallery-head">
+          <div>
+            <div class="section-kicker">Screen gallery · 08 concepts</div>
+            <h2 id="gallery-title">A task, across its lifecycle.</h2>
+          </div>
+          <p>Explore the workspace, task planning, live execution, and completed work. Each screen opens its supplied standalone prototype.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter screens">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All screens <span data-count="all">8</span></button>
+          <button class="filter" type="button" data-filter="desktop" aria-pressed="false">Desktop <span data-count="desktop">4</span></button>
+          <button class="filter" type="button" data-filter="mobile" aria-pressed="false">Mobile <span data-count="mobile">4</span></button>
+        </div>
+
+        <section class="screen-group" data-group="desktop" aria-labelledby="desktop-title">
+          <h3 class="group-heading" id="desktop-title">Desktop <span>01—04</span></h3>
+          <div class="screen-grid">
+            <article class="screen-card" data-device="desktop">
+              <div class="preview"><img src="Prototype%20Screens/Website%20screens/Website%20Screens/copilot_workspace_home/screen.png" alt="Preview of the Copilot desktop workspace home" loading="lazy"></div>
+              <div class="card-copy">
+                <div class="card-meta"><span>01 · Entry point</span><span>Desktop</span></div>
+                <h3>Workspace home</h3>
+                <p>Start with a desired outcome, choose a suggested task, or return to work already in progress.</p>
+                <a class="open-link" href="Prototype%20Screens/Website%20screens/Website%20Screens/copilot_workspace_home/code.html" target="_blank" rel="noopener">Open desktop prototype &#8599;</a>
+              </div>
+            </article>
+            <article class="screen-card" data-device="desktop">
+              <div class="preview"><img src="Prototype%20Screens/Website%20screens/Website%20Screens/task_delegation_plan_understanding/screen.png" alt="Preview of a Copilot task delegation plan" loading="lazy"></div>
+              <div class="card-copy">
+                <div class="card-meta"><span>02 · Planning</span><span>Desktop</span></div>
+                <h3>Task delegation</h3>
+                <p>Translate the request into a visible plan with connected apps, execution details, and boundaries.</p>
+                <a class="open-link" href="Prototype%20Screens/Website%20screens/Website%20Screens/task_delegation_plan_understanding/code.html" target="_blank" rel="noopener">Open desktop prototype &#8599;</a>
+              </div>
+            </article>
+            <article class="screen-card" data-device="desktop">
+              <div class="preview"><img src="Prototype%20Screens/Website%20screens/Website%20Screens/live_agent_execution_q3_review/screen.png" alt="Preview of a Copilot agent executing a task" loading="lazy"></div>
+              <div class="card-copy">
+                <div class="card-meta"><span>03 · In progress</span><span>Desktop</span></div>
+                <h3>Live execution</h3>
+                <p>Follow task progress, app handoffs, and checkpoints while Copilot works across a workflow.</p>
+                <a class="open-link" href="Prototype%20Screens/Website%20screens/Website%20Screens/live_agent_execution_q3_review/code.html" target="_blank" rel="noopener">Open desktop prototype &#8599;</a>
+              </div>
+            </article>
+            <article class="screen-card" data-device="desktop">
+              <div class="preview"><img src="Prototype%20Screens/Website%20screens/Website%20Screens/completed_work_q3_executive_review/screen.png" alt="Preview of completed Copilot work ready for review" loading="lazy"></div>
+              <div class="card-copy">
+                <div class="card-meta"><span>04 · Completed</span><span>Desktop</span></div>
+                <h3>Completed work</h3>
+                <p>Review the finished deliverable alongside its source context, actions, and reusable output.</p>
+                <a class="open-link" href="Prototype%20Screens/Website%20screens/Website%20Screens/completed_work_q3_executive_review/code.html" target="_blank" rel="noopener">Open desktop prototype &#8599;</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="screen-group" data-group="mobile" aria-labelledby="mobile-title">
+          <h3 class="group-heading" id="mobile-title">Mobile <span>01—04</span></h3>
+          <div class="screen-grid">
+            <article class="screen-card" data-device="mobile">
+              <div class="preview mobile"><img src="Prototype%20Screens/Mobile/Mobile%20Screens/copilot_mobile_home/screen.png" alt="Preview of the Copilot mobile home screen" loading="lazy"></div>
+              <div class="card-copy">
+                <div class="card-meta"><span>01 · Entry point</span><span>Mobile</span></div>
+                <h3>Mobile home</h3>
+                <p>Capture an outcome by text or voice, then pick up active work from a compact workspace.</p>
+                <a class="open-link" href="Prototype%20Screens/Mobile/Mobile%20Screens/copilot_mobile_home/code.html" target="_blank" rel="noopener">Open mobile prototype &#8599;</a>
+              </div>
+            </article>
+            <article class="screen-card" data-device="mobile">
+              <div class="preview mobile"><img src="Prototype%20Screens/Mobile/Mobile%20Screens/copilot_mobile_task_delegation/screen.png" alt="Preview of mobile task delegation" loading="lazy"></div>
+              <div class="card-copy">
+                <div class="card-meta"><span>02 · Planning</span><span>Mobile</span></div>
+                <h3>Task delegation</h3>
+                <p>Understand the requested result and the proposed work from a phone-sized view.</p>
+                <a class="open-link" href="Prototype%20Screens/Mobile/Mobile%20Screens/copilot_mobile_task_delegation/code.html" target="_blank" rel="noopener">Open mobile prototype &#8599;</a>
+              </div>
+            </article>
+            <article class="screen-card" data-device="mobile">
+              <div class="preview mobile"><img src="Prototype%20Screens/Mobile/Mobile%20Screens/copilot_mobile_live_task/screen.png" alt="Preview of a live Copilot task on mobile" loading="lazy"></div>
+              <div class="card-copy">
+                <div class="card-meta"><span>03 · In progress</span><span>Mobile</span></div>
+                <h3>Live task</h3>
+                <p>Check status, time remaining, and work completed while away from the desktop.</p>
+                <a class="open-link" href="Prototype%20Screens/Mobile/Mobile%20Screens/copilot_mobile_live_task/code.html" target="_blank" rel="noopener">Open mobile prototype &#8599;</a>
+              </div>
+            </article>
+            <article class="screen-card" data-device="mobile">
+              <div class="preview mobile"><img src="Prototype%20Screens/Mobile/Mobile%20Screens/copilot_mobile_completed_work/screen.png" alt="Preview of completed Copilot work on mobile" loading="lazy"></div>
+              <div class="card-copy">
+                <div class="card-meta"><span>04 · Completed</span><span>Mobile</span></div>
+                <h3>Completed work</h3>
+                <p>Review the outcome and supporting activity history in a focused mobile layout.</p>
+                <a class="open-link" href="Prototype%20Screens/Mobile/Mobile%20Screens/copilot_mobile_completed_work/code.html" target="_blank" rel="noopener">Open mobile prototype &#8599;</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="shell closing" aria-labelledby="closing-title">
+        <div>
+          <h2 id="closing-title">Designed around the work, not the workflow.</h2>
+          <p>The concept prioritizes successful outcomes, visible progress, and recoverability. These screens are explorations, not a connected or production implementation.</p>
+        </div>
+        <a class="button" href="context.md">Read the project brief <span aria-hidden="true">&#8594;</span></a>
+      </section>
+    </main>
+
+    <footer class="shell">
+      <span>Sunday Workshop · Independent portfolio concept</span>
+      <a href="plan.md">Project plan</a>
+    </footer>
+
+    <script>
+      const filterButtons = document.querySelectorAll("[data-filter]");
+      const screenGroups = document.querySelectorAll("[data-group]");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const filter = button.dataset.filter;
+          filterButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+          screenGroups.forEach((group) => {
+            group.hidden = filter !== "all" && group.dataset.group !== filter;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
